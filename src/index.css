@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Orbitron", system-ui, sans-serif;
+  
+  --color-ferrari-red: #E10600;
+  --color-mclaren-orange: #FF8700;
+  --color-electric-blue: #00CFFF;
+  --color-neon-yellow: #F9FF00;
+  --color-race-dark: #050505;
+  --color-race-card: rgba(10, 10, 10, 0.65);
+  
+  --animate-scanline: scanline 8s linear infinite;
+  --animate-speed-lines: speedlines 1.5s linear infinite;
+  --animate-glow-pulse: glow-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes speedlines {
+  0% { transform: translateY(-100%) rotate(15deg); opacity: 0; }
+  10% { opacity: 0.3; }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(100%) rotate(15deg); opacity: 0; }
+}
+
+@keyframes glow-pulse {
+  0% { box-shadow: 0 0 5px rgba(225, 6, 0, 0.2), 0 0 10px rgba(225, 6, 0, 0.1); }
+  100% { box-shadow: 0 0 20px rgba(225, 6, 0, 0.6), 0 0 35px rgba(225, 6, 0, 0.3); }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-race-dark);
+}
+
+h1, h2, h3, .font-telemetry {
+  font-family: var(--font-display);
+}
+
+/* Custom Utilities */
+
+/* Subtle Carbon Fiber Pattern */
+.carbon-grid {
+  background-color: #050505;
+  background-image: 
+    linear-gradient(45deg, #090909 25%, transparent 25%), 
+    linear-gradient(-45deg, #090909 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #090909 75%), 
+    linear-gradient(-45deg, transparent 75%, #090909 75%);
+  background-size: 8px 8px;
+  background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+}
+
+/* Neon Text Glow */
+.glow-text-red {
+  text-shadow: 0 0 10px rgba(225, 6, 0, 0.6), 0 0 20px rgba(225, 6, 0, 0.3);
+}
+
+.glow-text-blue {
+  text-shadow: 0 0 10px rgba(0, 207, 255, 0.6), 0 0 20px rgba(0, 207, 255, 0.3);
+}
+
+.glow-text-orange {
+  text-shadow: 0 0 10px rgba(255, 135, 0, 0.6), 0 0 20px rgba(255, 135, 0, 0.3);
+}
+
+.glow-text-yellow {
+  text-shadow: 0 0 10px rgba(249, 255, 0, 0.6), 0 0 20px rgba(249, 255, 0, 0.3);
+}
+
+.glow-text-green {
+  text-shadow: 0 0 10px rgba(34, 197, 94, 0.6), 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+/* Glassmorphism Panel styles */
+.glass-panel {
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(15, 15, 15, 0.8);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* Custom Scrollbar for Telemetry Feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(5, 5, 5, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(225, 6, 0, 0.4);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(225, 6, 0, 0.8);
+}
+
+/* Hide raw outline focus but maintain accessibility styles */
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--color-ferrari-red);
+  box-shadow: 0 0 10px rgba(225, 6, 0, 0.3);
+}
+
+/* Animated F1 Speed Lines overlay */
+.speed-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.speed-line {
+  position: absolute;
+  width: 1px;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 207, 255, 0.4), transparent);
+  pointer-events: none;
+}
