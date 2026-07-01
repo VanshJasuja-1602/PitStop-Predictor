@@ -637,7 +637,7 @@ export default function App() {
             </div>
             <div className="flex gap-3 pt-1">
               <a
-                href="https://github.com/vanshjasuja16"
+                href="https://github.com/VanshJasuja-1602/PitStop-Predictor"
                 target="_blank"
                 rel="noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 px-3 py-2.5 bg-zinc-900 border border-zinc-700 hover:border-white rounded-xl text-[11px] font-display font-black uppercase tracking-wider text-white hover:bg-zinc-800 transition-all duration-300 hover:scale-[1.03] cursor-pointer shadow-[0_0_10px_rgba(255,255,255,0.08)] hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]"
