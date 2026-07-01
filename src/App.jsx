@@ -650,7 +650,7 @@ export default function App() {
                 <span>GitHub</span>
               </a>
               <a
-                href="https://linkedin.com/in/vanshjasuja16"
+                href="www.linkedin.com/in/vansh-jasuja-93544a344"
                 target="_blank"
                 rel="noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 px-3 py-2.5 bg-[#0077B5] hover:bg-[#0082c8] rounded-xl text-[11px] font-display font-black uppercase tracking-wider text-white transition-all duration-300 hover:scale-[1.03] cursor-pointer shadow-[0_0_12px_rgba(0,119,181,0.3)] hover:shadow-[0_0_22px_rgba(0,119,181,0.6)] border border-transparent"
